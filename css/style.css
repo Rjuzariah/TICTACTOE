@@ -1,0 +1,210 @@
+/*******tic-tac-toe******/
+#tic-tac-toe .disable {text-transform:uppercase; font-size:30px; font-family:Georgia, "Times New Roman", Times, serif}
+#tic-tac-toe #game li {float:left; padding:0; list-style:none; text-align:center; margin-bottom:20px; color:#fff; height:60px; line-height:60px; font-size:40px; color:#ccc}
+#tic-tac-toe #game li.disable{color:#fff}
+#tic-tac-toe #game {float:left; padding:0; clear:both}
+.new_span {width:226px}
+#tic-tac-toe #reset { /*padding:5px 10px;*/ color:#fff; font-family:Arial, Helvetica, sans-serif; font-size:15px; clear:both; cursor:pointer; float:left; text-align:center; text-transform:uppercase; outline:none; width:237px}
+.input-prepend span.pre_text {width:55px}
+.input-prepend .span1{width:93px}
+.input-prepend {margin-bottom:10px}
+.clr {clear:both; height:0}
+#tic-tac-toe h1 {text-align:center; font-size:28px}
+#tic-tac-toe li::-moz-selection {background:none;color:#000;}
+#tic-tac-toe li::-webkit-selection {background:none;color:#000;}
+#tic-tac-toe {width:220px; margin:0 auto}
+.input-append .win_times {background:#fff; width:101px}
+.input-append .win_text {width:52px}
+/*******tic-tac-toe END******/
+body{
+	background-color: #aad6d129;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+td {
+	width: 33.333%;
+	border: 6px solid #222;
+}
+
+td::after {
+	content: "";
+	display: block;
+	margin-top: 100%;
+}
+
+td {
+	border: 5px solid #aad6d1;
+}
+
+td:first-of-type {
+	border-left-color: transparent;
+	border-top-color: transparent;
+}
+
+td:nth-of-type(2) {
+	border-top-color: transparent;
+}
+
+td:nth-of-type(3) {
+	border-right-color: transparent;
+	border-top-color: transparent;
+}
+
+tr:nth-of-type(3) td {
+	border-bottom-color: transparent;
+}
+
+
+
+td span {
+
+	float: left;
+	/* padding: 0; */
+	list-style: none;
+	text-align: center;
+	/*margin-bottom: 20px;*/
+	/* height: 60px; */
+	line-height: 73px;
+	font-size: 40px;
+	color: #124653;
+	width: 73px;
+	height: 73px;
+	font-weight: bold;
+}
+
+.X{
+	color: #124653;
+}
+.O{
+	color: #ed4e6e;
+}
+
+/*.row {
+    margin-left: 0px; 
+    }*/
+
+.reset{
+	text-align: center;
+	border: none;
+	padding: 0.6em 1.2em;
+	background: #ed4e6e;
+	color: #fff;
+	font-size: 1em;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: inline-block;
+	margin: 3px 2px;
+	border-radius: 2px;
+
+}
+
+.blinking{
+	animation:blinkingText 1.2s infinite;
+}
+@keyframes blinkingText{
+	0%{     color: #000;    }
+	49%{    color: #000; }
+	60%{    color: transparent; }
+	99%{    color:transparent;  }
+	100%{   color: #000;    }
+}
+
+select{
+	border-color: #f1f8f7;
+	background-color: transparent;
+	font-weight: bold;
+	color: #777;
+}
+
+select:active {
+	background-color: aliceblue;
+}
+
+
+.container-form-card {
+	/*display: block;*/
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 14px;
+	margin-right: 8px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	margin-left: 12px;
+}
+
+/* Hide the browser's default radio button */
+.container-form-card input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+.checkmark-card {
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    width: 72%;
+    background-color: #f8f9fa;
+    /* border-radius: 50%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    border: 1px solid #aad6d1;
+    margin: auto;
+}
+
+.container-form-card:hover input ~ .checkmark-card {
+	background-color: #fff;
+	box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+	transition: .3s ease-in-out;
+}
+.container-form-card input:disabled ~ .checkmark-card {
+	background-color: #dae0e5;
+}
+
+/* When the radio button is checked, add a blue background */
+.container-form-card input:checked ~ .checkmark-card {
+	/*background-color: #F3B34F;*/
+	/*color: #fff;*/
+	transition: .3s ease-in-out;
+	transform: scale(1.03);
+	border: unset;
+	border: 1px solid #aad6d1;
+	/*box-shadow: 0 4px 8px rgba(0,0,0,0.1);*/
+	border-bottom: #8ab9b4 3px solid;
+}
+
+.container-form-card input:checked ~ .checkmark-card:after {
+	display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container-form-card .checkmark-card:after {
+	right: 12px;
+	top: 4px;
+	width: 8px;
+	height: 15px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.container-form-card .text-card{
+	margin-left: -10px;
+}
